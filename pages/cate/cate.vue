@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<my-search @click="goToSearch"></my-search> 
 		<view class="scroll-view-container">
 			<scroll-view class="scroll-view-left" scroll-y="true" :style="{height : wh + 'px'}">
 				<view v-for="(item,index) in cateList" :key="index" @click="changeIndex(index)"
@@ -36,7 +37,7 @@
 		},
 		onLoad() {
 			//获取设备信息
-			this.wh = uni.getSystemInfoSync().windowHeight
+			this.wh = uni.getSystemInfoSync().windowHeight - 50
 			//获取左侧数据
 			this.getSearchList()
 		},
@@ -58,10 +59,16 @@
 				this.level2 = this.cateList[index].children
 				this.scrollTop = this.scrollTop?0:1
 			},
-			//跳转到详情列表
+			//跳转到列表
 			goToGoodsList(item){
 				uni.navigateTo({
 					url:'/subpkg/goods_list/goods_list?cid=' + item.cat_id
+				})
+			},
+			// 跳转到搜索
+			goToSearch(){
+				uni.navigateTo({
+					url: "/subpkg/search/search"
 				})
 			}
 		}

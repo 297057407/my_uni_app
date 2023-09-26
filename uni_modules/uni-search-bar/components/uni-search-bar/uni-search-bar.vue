@@ -64,7 +64,7 @@
 		props: {
 			placeholder: {
 				type: String,
-				default: ""
+				default: "请输入搜索内容"
 			},
 			radius: {
 				type: [Number, String],
@@ -100,7 +100,7 @@
 			},
 			focus: {
 				type: Boolean,
-				default: false
+				default: true
 			},
 			readonly: {
 				type: Boolean,
@@ -235,7 +235,7 @@
 		flex-direction: row;
 		position: relative;
 		padding: 10px;
-		// background-color: #fff;
+		background-color: #C00000;
 	}
 
 	.uni-searchbar__box {
